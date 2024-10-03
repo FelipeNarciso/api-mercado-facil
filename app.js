@@ -10,6 +10,9 @@ app.use(express.json()); // Isso é necessário para que o Express entenda JSON
 const port = process.env.PORT || 3001;
 
 
+app.get('/', (req, res) => {
+  return res.json("Hello World")
+});
 app.get('/api/all_users', (req, res) => {
   // Exemplo de uma query para buscar dados do banco
   const query = 'SELECT * FROM usuarios';
