@@ -1,5 +1,5 @@
 // app.js
-const express = require('express');
+express = require('express');
 const connection = require('./db'); // Importe a conexão com o banco de dados
 const cors = require('cors');
 
@@ -13,6 +13,7 @@ const port = process.env.PORT || 3001;
 app.get('/', (req, res) => {
   return res.json("Hello World")
 });
+
 app.get('/api/all_users', (req, res) => {
   // Exemplo de uma query para buscar dados do banco
   const query = 'SELECT * FROM usuarios';
