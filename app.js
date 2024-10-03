@@ -14,7 +14,7 @@ app.get('/', (req, res) => {
   return res.json("Hello World")
 });
 
-app.get('/api/all_users', (req, res) => {
+app.get('/all_users', (req, res) => {
   // Exemplo de uma query para buscar dados do banco
   const query = 'SELECT * FROM usuarios';
   connection.query(query, (error, results) => {
@@ -25,7 +25,7 @@ app.get('/api/all_users', (req, res) => {
   });
 });
 
-app.post('/api/users', (req, res) => {
+app.post('/users', (req, res) => {
 
   const { email, senha} = req.body;
   // Exemplo de uma query para buscar dados do banco
@@ -44,7 +44,7 @@ app.post('/api/users', (req, res) => {
 });
 
 
-app.post('/api/cadastrar', (req, res) => {
+app.post('/cadastrar', (req, res) => {
     const { nome, email, senha} = req.body; // Altere os nomes aqui
 
     const query = 'INSERT INTO usuarios (nomeUsuario, emailUsuario, senhaUsuario) VALUES (?, ?, ?)';
@@ -59,7 +59,7 @@ app.post('/api/cadastrar', (req, res) => {
     });
 });
 
-app.delete('/api/deletar', (req, res) => {
+app.delete('/deletar', (req, res) => {
   const { nome } = req.body; // Recebe o nome do usuário a ser deletado
 
   const query = 'SELECT idUsuario FROM usuarios WHERE nomeUsuario = ?';
